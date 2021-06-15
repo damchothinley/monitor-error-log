@@ -129,83 +129,54 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-DEFAULT_FROM_EMAIL = 'server@example.com'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'server@example.com'
-EMAIL_HOST_PASSWORD = 'passs'
-EMAIL_USE_TLS = True
-
-SERVER_EMAIL = 'server@example.com'
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
+    'disable_existing_loggers': False,
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[%(server_time)s] %(message)s a',
         }
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
         },
-        'file': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'verbose',
-            'filename': '/var/www/logs/ibiddjango.log',
-            'maxBytes': 1024000,
-            'backupCount': 3,
-        },
-        'sql': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'verbose',
-            'filename': '/var/www/logs/sql.log',
-            'maxBytes': 102400,
-            'backupCount': 3,
-        },
-        'commands': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'verbose',
-            'filename': '/var/www/logs/commands.log',
-            'maxBytes': 10240,
-            'backupCount': 3,
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
         },
         'mail_admins': {
-            'level': 'ERROR',
-            # 'filters': ['require_debug_false'],
+            'level': 'WARNING',
+            'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console', 'mail_admins'],
-            'propagate': True,
-            'level': 'DEBUG',
+            'handlers': ['console', 'mail_admins'],
+            'level': 'INFO',
         },
-        'django.db.backends': {
-            'handlers': ['sql', 'console'],
-            'propagate': False,
-            'level': 'WARNING',
-        },
-        'scheduling': {
-            'handlers': ['commands', 'console'],
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
             'propagate': True,
-            'level': 'DEBUG',
         },
     }
 }
