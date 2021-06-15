@@ -172,7 +172,7 @@ DEFAULT_LOGGING = {
         },
         'mail_admins': {
             'level': 'ERROR',
-            'filters': ['require_debug_false'],
+            # 'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
@@ -184,7 +184,7 @@ DEFAULT_LOGGING = {
         'django.server': {
             'handlers': ['django.server'],
             'level': 'INFO',
-            'propagate': False,
+            'propagate': True,
         },
     }
 }
