@@ -142,33 +142,48 @@ ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
-DEFAULT_LOGGING = {
+LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse',
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-    },
-    'formatters': {
-        'django.server': {
-            '()': 'django.utils.log.ServerFormatter',
-            'format': '[%(server_time)s] %(message)s a',
         }
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
-            'filters': ['require_debug_true'],
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
+            'formatter': 'simple'
         },
-        'django.server': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'django.server',
+        'file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/var/www/logs/ibiddjango.log',
+            'maxBytes': 1024000,
+            'backupCount': 3,
+        },
+        'sql': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/var/www/logs/sql.log',
+            'maxBytes': 102400,
+            'backupCount': 3,
+        },
+        'commands': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/var/www/logs/commands.log',
+            'maxBytes': 10240,
+            'backupCount': 3,
         },
         'mail_admins': {
             'level': 'ERROR',
@@ -178,13 +193,19 @@ DEFAULT_LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'mail_admins'],
-            'level': 'INFO',
-        },
-        'django.server': {
-            'handlers': ['django.server'],
-            'level': 'INFO',
+            'handlers': ['file', 'console', 'mail_admins'],
             'propagate': True,
+            'level': 'DEBUG',
+        },
+        'django.db.backends': {
+            'handlers': ['sql', 'console'],
+            'propagate': False,
+            'level': 'WARNING',
+        },
+        'scheduling': {
+            'handlers': ['commands', 'console'],
+            'propagate': True,
+            'level': 'DEBUG',
         },
     }
 }
