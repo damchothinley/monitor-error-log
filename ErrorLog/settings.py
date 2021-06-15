@@ -129,7 +129,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+DEFAULT_FROM_EMAIL = 'server@example.com'
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'server@example.com'
+EMAIL_HOST_PASSWORD = 'passs'
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = 'server@example.com'
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
