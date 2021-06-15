@@ -1,0 +1,18 @@
+ERROR [2021-06-15 18:36:51,497] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-15 18:36:57,643] autoreload Watching for file changes with StatReloader
+INFO [2021-06-15 18:36:59,147] basehttp "GET / HTTP/1.1" 200 12
+ERROR [2021-06-15 18:37:08,172] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view monitor_log.views.ErrorView didn't return an HttpResponse object. It returned None instead.
+ERROR [2021-06-15 18:37:29,270] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-15 18:37:42,628] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-15 18:37:51,690] autoreload Watching for file changes with StatReloader
+INFO [2021-06-15 18:40:42,674] autoreload Watching for file changes with StatReloader
+INFO [2021-06-15 18:40:57,641] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-15 18:40:58,998] autoreload Watching for file changes with StatReloader
