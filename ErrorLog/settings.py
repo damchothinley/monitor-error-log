@@ -131,7 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 ADMINS = [
-    ('damcho-thinley', 'damchothinley@gmail.com')
+    ('damcho-thinley', 'damchothinley@gmail.com'),
+    ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
 DEFAULT_LOGGING = {
     'version': 1,
