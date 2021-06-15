@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse  # newly added
 
 # Create your views here.
@@ -6,3 +5,9 @@ from django.http import HttpResponse  # newly added
 
 def HomePageView(request):
     return HttpResponse("Hello World!")
+
+
+def ErrorView(request):
+    error = ""
+    if error:
+        return HttpResponse(error)

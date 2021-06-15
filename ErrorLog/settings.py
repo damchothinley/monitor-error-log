@@ -163,7 +163,7 @@ DEFAULT_LOGGING = {
             'formatter': 'django.server',
         },
         'mail_admins': {
-            'level': 'WARNING',
+            'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
