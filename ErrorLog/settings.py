@@ -130,53 +130,61 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
+
+DEFAULT_FROM_EMAIL = 'server@example.com'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'server@example.com'
+EMAIL_HOST_PASSWORD = 'passs'
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = 'server@example.com'
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
+
+
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse',
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-    },
-    'formatters': {
-        'django.server': {
-            '()': 'django.utils.log.ServerFormatter',
-            'format': '[%(server_time)s] %(message)s a',
         }
     },
     'handlers': {
         'console': {
             'level': 'INFO',
-            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
+            'formatter': 'simple'
         },
-        'django.server': {
+        'file': {
             'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'django.server',
+            'class': 'logging.FileHandler',
+            'filename': 'monitor_log/logs/details.log',
+            'formatter': 'verbose'
         },
         'mail_admins': {
-            'level': 'WARNING',
-            'filters': ['require_debug_false'],
+            'level': 'ERROR',
+            # 'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'mail_admins'],
-            'level': 'INFO',
-        },
-        'django.server': {
-            'handlers': ['django.server'],
-            'level': 'INFO',
+            'handlers': ['file', 'console', 'mail_admins'],
             'propagate': True,
+            'level': 'DEBUG',
         },
     }
 }
