@@ -133,10 +133,10 @@ django_heroku.settings(locals())
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'damchothinley@gmail.com'
-EMAIL_HOST_PASSWORD = 'dota2_dendi'
+EMAIL_HOST_USER = 'jcm.monitoring@gmail.com'
+EMAIL_HOST_PASSWORD = 'jcm6418@'
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# EMAIL_USE_SSL = False
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
@@ -174,7 +174,8 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             # 'class': 'django.utils.log.AdminEmailHandler', #default error
-            'class': 'ErrorLog.reporter.CustomAdminEmailHandler'
+            'class': 'ErrorLog.reporter.CustomAdminEmailHandler',
+            'formatter': 'verbose'
         }
     },
     'loggers': {

@@ -114,3 +114,77 @@ AttributeError: 'str' object has no attribute 'get'
 INFO [2021-06-16 15:17:45,442] basehttp - Broken pipe from ('127.0.0.1', 61673)
 
 ERROR [2021-06-16 15:17:48,573] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:21:14,246] autoreload Watching for file changes with StatReloader
+INFO [2021-06-16 15:21:15,487] basehttp "GET / HTTP/1.1" 200 12
+INFO [2021-06-16 15:21:18,145] basehttp "GET / HTTP/1.1" 200 12
+ERROR [2021-06-16 15:21:24,327] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:21:28,357] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:23:00,864] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-16 15:23:02,131] autoreload Watching for file changes with StatReloader
+ERROR [2021-06-16 15:23:06,666] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:23:10,590] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:24:08,820] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-16 15:24:09,984] autoreload Watching for file changes with StatReloader
+ERROR [2021-06-16 15:24:10,894] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:24:16,236] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:28:00,035] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-16 15:28:01,216] autoreload Watching for file changes with StatReloader
+INFO [2021-06-16 15:28:07,908] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-16 15:28:09,079] autoreload Watching for file changes with StatReloader
+ERROR [2021-06-16 15:28:13,551] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:28:15,984] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:28:42,111] basehttp "GET / HTTP/1.1" 200 12
+ERROR [2021-06-16 15:28:55,638] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:28:57,623] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 15:29:08,299] autoreload C:\Users\damucho-thinley\Desktop\MonitorErrorLog\ErrorLog\settings.py changed, reloading.
+INFO [2021-06-16 15:29:09,547] autoreload Watching for file changes with StatReloader
+ERROR [2021-06-16 15:29:09,769] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 15:29:14,771] basehttp "GET /error/ HTTP/1.1" 500 145
