@@ -139,52 +139,52 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'damchothinley@gmail.com'
 EMAIL_HOST_PASSWORD = 'dota2_dendi'
 EMAIL_USE_TLS = True
-
+EMAIL_USE_SSL = False
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
 
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': True,
-#     'formatters': {
-#         'verbose': {
-#             'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
-#         },
-#         'simple': {
-#             'format': '%(levelname)s %(message)s'
-#         },
-#     },
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse',
-#         }
-#     },
-#     'handlers': {
-#         'console': {
-#             'level': 'INFO',
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'simple'
-#         },
-#         'file': {
-#             'level': 'INFO',
-#             'class': 'logging.FileHandler',
-#             'filename': 'monitor_log/logs/details.log',
-#             'formatter': 'verbose'
-#         },
-#         'mail_admins': {
-#             'level': 'ERROR',
-#             # 'filters': ['require_debug_false'],
-#             'class': 'django.utils.log.AdminEmailHandler'
-#         }
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file', 'console', 'mail_admins'],
-#             'propagate': True,
-#             'level': 'DEBUG',
-#         },
-#     }
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'monitor_log/logs/details.log',
+            'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            # 'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console', 'mail_admins'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
+    }
+}

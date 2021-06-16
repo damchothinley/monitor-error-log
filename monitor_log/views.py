@@ -20,4 +20,4 @@ def ErrorView(request):
     except Exception:
         return Exception
     else:
-        return "<em>Email send successfully</em>"
+        return ("<em>Email send successfully</em>")
