@@ -10,14 +10,4 @@ def HomePageView(request):
 
 
 def ErrorView(request):
-    try:
-        print("%s" % (EMAIL_HOST_USER))
-        subject = "test"
-        message = "mailing trial"
-        from_email = EMAIL_HOST_USER
-        send_mail(subject, message, from_email, [
-            from_email], fail_silently=True)
-    except Exception:
-        return Exception
-    else:
-        return ("<em>Email send successfully</em>")
+    return ("<em>Email send successfully</em>")

@@ -131,20 +131,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 
-DEFAULT_FROM_EMAIL = 'server@example.com'
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'damchothinley@gmail.com'
-EMAIL_HOST_PASSWORD = 'dota2_dendi'
+EMAIL_HOST_USER = 'jcm.monitoring@gmail.com'
+EMAIL_HOST_PASSWORD = 'jcm6418@'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 ADMINS = [
     ('damcho-thinley', 'damchothinley@gmail.com'),
     ('damcho-thinley', 'damcho-thinley@jcm-hq.co.jp')
 ]
-
 
 LOGGING = {
     'version': 1,
@@ -177,7 +174,8 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             # 'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+            # 'class': 'django.utils.log.AdminEmailHandler', # deafault error reporter
+            'class': 'ErrorLog.reporter.CustomAdminEmailHandler',
         }
     },
     'loggers': {
