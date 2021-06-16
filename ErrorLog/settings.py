@@ -135,8 +135,8 @@ DEFAULT_FROM_EMAIL = 'server@example.com'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'server@example.com'
-EMAIL_HOST_PASSWORD = 'passs'
+EMAIL_HOST_USER = 'damchothinley@gmail.com'
+EMAIL_HOST_PASSWORD = 'dota2_dendi'
 EMAIL_USE_TLS = True
 
 SERVER_EMAIL = 'server@example.com'
