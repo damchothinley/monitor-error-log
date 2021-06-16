@@ -201,3 +201,15 @@ Traceback (most recent call last):
     if response.get('X-Frame-Options') is not None:
 AttributeError: 'str' object has no attribute 'get'
 ERROR [2021-06-16 15:40:54,693] basehttp "GET /error/ HTTP/1.1" 500 145
+INFO [2021-06-16 16:00:45,700] autoreload Watching for file changes with StatReloader
+INFO [2021-06-16 16:00:47,438] basehttp "GET / HTTP/1.1" 200 12
+ERROR [2021-06-16 16:00:54,233] log Internal Server Error: /error/
+Traceback (most recent call last):
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\damucho-thinley\Desktop\MonitorErrorLog\env\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'str' object has no attribute 'get'
+ERROR [2021-06-16 16:00:58,925] basehttp "GET /error/ HTTP/1.1" 500 145
